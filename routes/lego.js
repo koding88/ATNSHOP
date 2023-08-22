@@ -46,4 +46,22 @@ router.get('/delete/:id', async (req, res) => {
     res.redirect('/cars')
 })
 
+// Search description
+router.post('/search', async (req, res) => {
+    var searchkey = req.body.searchkey
+    var lego = await LegoModel.find({ detail: new RegExp(searchkey, "i") })
+    res.render('lego/listlego', { lego: lego })
+})
+
+// Sort year 
+router.get('/sort/year/asc', async (req, res) => {
+    var lego = await LegoModel.find().sort({ year : 1})
+    res.render('lego/listlego', { lego: lego })
+})
+
+router.get('/sort/year/desc', async (req, res) => {
+    var lego = await LegoModel.find().sort({ year : -1})
+    res.render('lego/listlego', { lego: lego })
+})
+
 module.exports = router;

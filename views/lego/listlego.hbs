@@ -7,6 +7,24 @@
         <i class="fa-solid fa-plus"></i>
         <i class="fa-solid fa-puzzle-piece"></i>
     </a>
+
+    <form action="/lego/search" method="post">
+        <label for="">Search Description: </label>
+        <input type="search" name="searchkey">
+    </form>
+
+    <select name="" onchange="window.location.href=this.value">
+        <option value="">
+            Select by option
+        </option>
+        <option value="lego/sort/year/asc">
+            Year asc
+        </option>
+        <option value="lego/sort/year/desc">
+            Year desc
+        </option>
+    </select>
+
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
             <thead>

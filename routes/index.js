@@ -61,8 +61,6 @@ router.post('/shop/search', async (req, res) => {
   res.render('shop', { all: all });
 });
 
-
-
 // detail
 router.get('/detail/:id', async (req, res) => {
   var id = req.params.id;
@@ -76,7 +74,6 @@ router.get('/detail/:id', async (req, res) => {
     res.redirect('/shop');
   }
 });
-
 
 // About
 router.get('/contact', async (req, res) => {
